@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Ember Starter Kit</title>
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <script type="text/x-handlebars">
+    <header>
+      {{#link-to "index" }}Home{{/link-to}}
+      {{#link-to "projects"}}My fancy posts...{{/link-to}}
+      {{#link-to "about" }}About{{/link-to}}
+    </header>
+    <div class="container">
+      {{outlet}}
+    </div>
+  </script>
+
+  <script type="text/x-handlebars" id="index">
+    <h2>Welcome to my Blog</h2>
+    <p>
+      <blockquote>
+        <p>Make sure you ran {{markdown "`'php makeDB.php'`"}}  from your favorite commandline to compile or update the list of available projects!</p>
+      </blockquote>
+  </script>
+
+  <script type="text/x-handlebars" id="error">
+    Ups! Something went wrong... ({{statusText}})
+  </script>
+
+  <script type="text/x-handlebars" id="projects">
+    <div class="row">
+      <div class="side">
+        <ul>
+        {{#each item in model}}
+          <li>{{#link-to 'project' item}}{{item}}{{/link-to}}</li>
+        {{/each}}
+        </ul>
+      </div>
+      <div class="master">
+        {{outlet}}
+      </div>
+    </div>
+  </script>
+
+  <script type="text/x-handlebars" id="projects/index">
+    Click on one of the projects on the left side.
+  </script>
+
+  <script type="text/x-handlebars" id="project">
+    {{title}}
+    <hr>
+    {{markdown body model}}
+  </script>
+
+  <script type="text/x-handlebars" id="about">
+    about this blog....
+  </script>
+
+  <script src="js/libs/jquery-1.10.2.js"></script>
+  <script src="js/libs/handlebars-1.1.2.js"></script>
+  <script src="js/libs/ember-1.2.0.js"></script>
+  <script src="js/libs/showdown.min.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

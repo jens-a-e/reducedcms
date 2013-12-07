@@ -1,0 +1,50 @@
+/* Put your CSS here */
+.ember-application {
+    margin: 20px;
+}
+
+header {
+  background-color: #fe0f0f;
+  color: white;
+  font-size: 200%;
+  height: 100px;
+  padding: 1em;
+}
+
+header a {
+  color: inherit;
+  text-decoration: none;
+}
+
+header a:hover {
+  color: inherit;
+  color: #909;
+  text-decoration: underline;
+}
+
+header
+
+.container {
+  margin-top: 2em;
+}
+
+.row {
+  width: 100%;
+}
+
+.side,.master {
+  float: left;
+}
+
+.side {
+  width: 20%;
+}
+
+.master {
+  width: 80%;
+}
+
+.master img[title^="- "] {
+  width: 50%;
+  height: auto;
+}
